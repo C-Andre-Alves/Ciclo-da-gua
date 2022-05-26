@@ -3,7 +3,7 @@ local scene = composer.newScene()
 
 local avancar, retornar
 
-local function abrirpage00(self, event)
+local function retornarTela(self, event)
     if event.phase == "ended" or event.phase == "cancelled" then
         composer.gotoScene("page00", "slideRight", 800)
         return true
@@ -12,7 +12,7 @@ end
 
 local function proximaTela(self, event)
     if event.phase == "ended" or event.phase == "cancelled" then
-        composer.gotoScene("final", "slideLeft", 800)
+        composer.gotoScene("page06", "slideLeft", 800)
         return true
     end
 end
@@ -27,12 +27,33 @@ function scene:create(event)
     fundo_branco.x = 0
     fundo_branco.y = display.contentCenterY -800
 
+    --Imagem de fundo céu | Localização e Tamanho
+    local ceu = display.newImageRect(sceneGroup, "assets/ceu.png", display.contentWidth, display.contentHeight-570)
+    ceu.anchorX = 0
+    ceu.anchorY = 0
+    ceu.x = display.contentCenterX - 385
+    ceu.y = display.contentCenterY - 343
+
+    --Imagem de SOL SEM O BRILHO | Localização e Tamanho
+    local sol_sem_brilho = display.newImageRect(sceneGroup, "assets/sol_sem_brilho.png", display.contentWidth-500, display.contentHeight-820)
+    sol_sem_brilho.anchorX = 0
+    sol_sem_brilho.anchorY = 0
+    sol_sem_brilho.x = display.contentCenterX - 385
+    sol_sem_brilho.y = display.contentCenterY - 343
+
+    --Imagem de SOL BRILHANTE | Localização e Tamanho
+    local sol_brilhante = display.newImageRect(sceneGroup, "assets/sol_brilhante.png", display.contentWidth-500, display.contentHeight-820)
+    sol_brilhante.anchorX = 0
+    sol_brilhante.anchorY = 0
+    sol_brilhante.x = display.contentCenterX - 385
+    sol_brilhante.y = display.contentCenterY - 343
+
     --Imagem de fundo Floresta | Localização e Tamanho
-    local background = display.newImageRect(sceneGroup, "assets/floresta1.png", display.contentWidth, display.contentHeight)
-    background.anchorX = 0
-    background.anchorY = 0
-    background.x = display.contentCenterX - 385
-    background.y = display.contentCenterY - 320
+    local floresta = display.newImageRect(sceneGroup, "assets/floresta3.png", display.contentWidth, display.contentHeight-430)
+    floresta.anchorX = 0
+    floresta.anchorY = 0
+    floresta.x = display.contentCenterX - 385
+    floresta.y = display.contentCenterY + 110
 
     local options1 = {
         text = "O Sol é o responsável por proporcionar energia para que o ciclo aconteça. Sua luz provoca a evaporação da água presente na superfície terrestre. (Toque no sol para aumentar sua luz para acontecer a evaporação)",
@@ -60,7 +81,9 @@ function scene:create(event)
 
     --Adicionando as variáveis ao grupo
     sceneGroup:insert(fundo_branco)
-    sceneGroup:insert(background)
+    sceneGroup:insert(ceu)
+    sceneGroup:insert(sol_sem_brilho)
+    sceneGroup:insert(floresta)
     sceneGroup:insert(myText1)
     sceneGroup:insert(avancar)
     sceneGroup:insert(retornar)
@@ -74,21 +97,11 @@ function scene:show(event)
     if phase == "will" then
     elseif phase == "did" then
         avancar.touch = proximaTela
-        retornar.touch = abrirpage00
+        retornar.touch = retornarTela
         avancar:addEventListener("touch", avancar)
         retornar:addEventListener("touch", retornar)
     end
 end
-
---function scene:show(event)
-    --local sceneGroup = self.view
-    --local phase = event = event.phase
-
-    --if phase == "will" then
-     -- elseif phase == "did" then
-        
-     -- end
-    --end
 
 function scene:hide(event)
     local sceneGroup = self.view

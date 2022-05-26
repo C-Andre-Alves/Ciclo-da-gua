@@ -16,11 +16,11 @@ function scene:create(event)
     --------Imagens da tela--------
 
     --Imagem de fundo branco | Localização e Tamanho
-    local background = display.newImageRect(sceneGroup, "assets/fundo_branco.png", display.contentWidth, display.contentHeight+600)
-    background.anchorX = 0
-    background.anchorY = 0
-    background.x = 0
-    background.y = display.contentCenterY -800
+    local fundo_branco = display.newImageRect(sceneGroup, "assets/fundo_branco.png", display.contentWidth, display.contentHeight+600)
+    fundo_branco.anchorX = 0
+    fundo_branco.anchorY = 0
+    fundo_branco.x = 0
+    fundo_branco.y = display.contentCenterY -800
 
     --Imagem de fundo da água | Localização
     local fundo_agua = display.newImageRect(sceneGroup, "assets/agua.png", display.contentWidth, display.contentHeight+300)
@@ -30,9 +30,9 @@ function scene:create(event)
     fundo_agua.y = -150
 
      --Logo da upe | Tamanho e localização
-     local upelogo = display.newImageRect(sceneGroup, "assets/upe.png", 220, 150)
-     upelogo.x = display.contentWidth * 0.85
-     upelogo.y = display.contentCenterY -710
+     local upe = display.newImageRect(sceneGroup, "assets/upe.png", 220, 150)
+     upe.x = display.contentWidth * 0.85
+     upe.y = display.contentCenterY -710
 
      --Nome: Ciclo da água | Tamanho e localização
      local ciclo = display.newImageRect(sceneGroup, "assets/ciclo_da_agua.png", 700, 190)
@@ -76,13 +76,13 @@ function scene:create(event)
     nome:setFillColor( 0, 0, 255)
 
     --Adicionando as variáveis no grupo
-    sceneGroup:insert(background)
+    sceneGroup:insert(fundo_branco)
     sceneGroup:insert(fundo_agua)
     sceneGroup:insert(ciclo)
     sceneGroup:insert(ciencias)
     sceneGroup:insert(nome)
     sceneGroup:insert(avancar)
-    sceneGroup:insert(upelogo)
+    sceneGroup:insert(upe)
 
 end
 
