@@ -5,7 +5,7 @@ local retornar
 
 local function retornarTela(self, event)
     if event.phase == "ended" or event.phase == "cancelled" then
-        composer.gotoScene("page01", "slideRight", 800)
+        composer.gotoScene("page05", "slideRight", 800)
         return true
     end
 end
@@ -70,10 +70,6 @@ function scene:create(event)
     sceneGroup:insert(retornar)
     sceneGroup:insert(upe)
 
-    local bgMusic = audio.loadStream("assets/vento.mp3")
-    audio.reserveChannels(1)
-    audio.setVolume( 0.5, { channel=1 } )
-    audio.play( bgMusic, { channel=1, loops=-1 } )
 end
 
 function scene:show(event)

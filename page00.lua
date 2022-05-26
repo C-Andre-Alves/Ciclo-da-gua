@@ -45,10 +45,10 @@ function scene:create(event)
     avancar.y = display.contentHeight + 250
    
     -- Colocar áudio
-    local bgMusic = audio.loadStream("assets/somarvore.mp3")
+    local audio_ciclo_da_agua = audio.loadStream("assets/audio_ciclo_da_agua.mp3")
     audio.reserveChannels(1)
-    audio.setVolume( 0.5, { channel=1 } )
-    audio.play( bgMusic, { channel=1, loops=-1 } )
+    audio.setVolume( 0.9, { channel=1 } )
+    audio.play( audio_ciclo_da_agua, { channel=1, loops=0.5 } )
 
     local opcao1  = {
         text = "Ciências",
