@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32" height="32" version="1.1" viewBox="0 0 32 32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><linearGradient id="linearGradient2755" x1="108" x2="165" y1="220" y2="49.8" gradientUnits="userSpaceOnUse"><stop stop-color="#a3acb9" offset="0"/><stop stop-color="#f9fbfb" offset="1"/></linearGradient></defs>
+<g transform="matrix(.121 0 0 .121 -.111 -.111)" stroke-width="8.28">
+	<path d="m66.4 20-46.4 180 180 46.4 46.4-180zm80.1 136-35.2-9.1 9.1-35.2 35.2 9.1z" fill="url(#linearGradient2755)" stroke="#e6e8eb" stroke-width="4.14"/>
+</g>
+</svg>
